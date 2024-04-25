@@ -26,10 +26,8 @@ function updateArray() {
         concat += "</table>";
         ticketsHTML.innerHTML = concat;
     });
-
 }
 
-// adds ticket to ticket array
 function buyTicket() {
     if (validateInput()) {
         let ticketDetails = {
@@ -72,8 +70,11 @@ function deleteTicket(id){
 }
 
 let toggledRows = [];
-
+// toggles between text and input fields for editing, can probably be done more efficiently
 function toggleEdit(object, id){
+    let target = object.parentNode.parentNode;
+    console.log(target);
+
     let row = object.parentNode.parentNode;
     let divs = row.querySelectorAll(".text");
     let buttons = row.querySelectorAll(".form-control");
@@ -100,12 +101,12 @@ function toggleEdit(object, id){
             toggledRows.splice(index, 1);
         }
     }
-
     updateTicket(row, id);
 }
 
+// updates single ticket in backend
 function updateTicket(object, id){
-    let inputs = object.querySelectorAll(".form-control");
+    let inputs = object.querySelectorAll(".form-control"); // gets all input fields in the row
 
     let ticket = {
         id: id,
@@ -134,7 +135,7 @@ function delEntries() {
 
 // input validation, returns true if input is valid
 function validateInput() {
-    let counter = 0;
+    let counter = 0
 
     let movie = document.getElementById("movie").value;
     let movieError = document.getElementById("movieError");
@@ -201,10 +202,10 @@ function testData(event) {
 
     document.getElementById("movie").value = "Oppenheimer";
     document.getElementById("amount").value = 1;
-    document.getElementById("firstName").value = "Petter";
-    document.getElementById("lastName").value = "Pettersen";
+    document.getElementById("firstName").value = "John";
+    document.getElementById("lastName").value = "Johnson";
     document.getElementById("phone").value = 10101010;
-    document.getElementById("email").value = "petter@gmail.com";
+    document.getElementById("email").value = "john@gmail.com";
 }
 
 updateArray(); // for drawing the ticket list
