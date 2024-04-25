@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Oblig1Application<oblig-1>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.oblig1.Oblig1Application",
+            "projectName": "oblig-1",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Oblig 2</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body class="m-5">
+        <h1 class="">Tickets</h1>
+
+        <!-- form with return false to prevent form from refreshing because validation is done through js -->
+        <form class="form" onsubmit="buyTicket(); return false">
+            <div class="form-group">
+                <label for="movie">Choose movie:</label>
+                <select id="movie" class="form-control col-md-6">
+                    <option value="" selected disabled hidden>Select a movie...</option>
+                    <option value="Oppenheimer">Oppenheimer</option>
+                    <option value="Barbie">Barbie</option>
+                    <option value="Barbenheimer">Barbenheimer</option>
+                </select>
+                <span class="error" id="movieError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input class="form-control col-md-6" type="number" id="amount" value="" />
+                <span class="error" id="amountError"></span>
+            </div>
+            <div class="form-group">
+                <label for="firstName">First name</label>
+                <input class="form-control col-md-6" type="text" id="firstName" value="" />
+                <span class="error" id="firstNameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last name</label>
+                <input class="form-control col-md-6" type="text" id="lastName" value="" />
+                <span class="error" id="lastNameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone number</label>
+                <input class="form-control col-md-6" type="tel" id="phone" value="" />
+                <span class="error" id="phoneError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input class="form-control col-md-6" type="email" id="email" value="" />
+                <span class="error" id="emailError"></span>
+            </div>
+
+            <input type="submit" value="Buy ticket" class="btn btn-primary" />
+            <button class="btn inline" onclick="testData(event)">Test data</button>
+        </form>
+        <br />
+
+        <h1>All tickets</h1>
+        <div id="tickets" class="table"></div>
+
+        <button onclick="deleteTickets()" class="btn btn-danger">Delete all tickets</button>
+        <script src="main.js"></script>
+    </body>
+</html>
