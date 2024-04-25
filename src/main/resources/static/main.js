@@ -100,8 +100,8 @@ function toggleEdit(object, id){
         if (index !== -1) {
             toggledRows.splice(index, 1);
         }
+        updateTicket(row, id);
     }
-    updateTicket(row, id);
 }
 
 // updates single ticket in backend
